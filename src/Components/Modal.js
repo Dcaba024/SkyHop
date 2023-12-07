@@ -14,6 +14,11 @@ const Modal = ({ isOpen, onClose, children }) => {
         <span className="modal-close" onClick={onClose}>
           <DisabledByDefaultIcon className='icon' fontSize="large"/>
         </span>
+        <div className='title'>
+            <h1>Document Upload</h1>
+        </div>
+
+
         <DragAndDropBox fontSize="large"/>
       </div>
     </div>
