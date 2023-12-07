@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Modal from './Components/Modal';
+
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleFileUpload = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Dylan's SkyHop Project</h1>
+
+
+      {!showModal ? (
+        <button onClick={handleFileUpload}>Upload File</button>
+      ) : (
+        <Modal isOpen={showModal} onClose={handleCloseModal}/>
+      )}
     </div>
   );
 }
