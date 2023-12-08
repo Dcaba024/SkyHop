@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Modal from './Components/Modal';
-
+import DropdownMenu from './Components/DropdownMenu';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -18,8 +18,6 @@ function App() {
   return (
     <div>
       <h1>Dylan's SkyHop Project</h1>
-
-
       {!showModal ? (
         <button onClick={handleFileUpload}>Upload File</button>
       ) : (

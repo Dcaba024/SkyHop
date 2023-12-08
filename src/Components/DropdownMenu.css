@@ -1,0 +1,43 @@
+/* DropdownMenu.css */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden; /* Ensure the rounded corners clip the dropdown content */
+  }
+  
+  .dropdown-container.open .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-icon {
+    width: 24px; /* Set the width and height of the icon */
+    height: 24px;
+    margin-right: 8px; /* Adjust spacing between icon and text */
+  }
+  
+  .dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    border-radius: 0 0 8px 8px; /* Rounded corners on the bottom */
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
