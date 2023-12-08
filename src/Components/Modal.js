@@ -3,7 +3,8 @@ import './Modal.css';
 import DragAndDropBox from './DragAndDropBox';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import SelectionMenu from './SelectionMenu';
-
+import SplitSchedule from './SplitSchedule';
+import Location from './Location';
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) {
     return null;
@@ -22,6 +23,11 @@ const Modal = ({ isOpen, onClose, children }) => {
                   <div className='column'>
                       <SelectionMenu />
                   </div>
+                  <div className='column'>
+                    <SplitSchedule/>
+                    <div className="line" />
+                    <Location/>
+                  </div>
 
               </div>
               <div className='row'>
@@ -32,7 +38,7 @@ const Modal = ({ isOpen, onClose, children }) => {
               <div className='row'>
                     <div className='column'>
                         <h2>Select a manifest that you'd like to import</h2>
-              <DragAndDropBox fontSize="large" />
+                          <DragAndDropBox fontSize="large" />
                     </div>
 
               </div>

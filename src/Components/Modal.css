@@ -68,4 +68,8 @@
     width: 50%; /* Set the width to match the width of the selection menu */
   }
   
+  .line {
+    border-bottom: 1px solid #ccc; /* Adjust color and size as needed */
+    width: 50%; /* Set the width to match the width of the selection menu */
+  }
   
