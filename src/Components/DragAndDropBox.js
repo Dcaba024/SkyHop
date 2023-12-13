@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
-
+import './DragAndDropBox.css'; // Import the CSS file
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const DragAndDropBox = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -26,26 +28,28 @@ const DragAndDropBox = () => {
   };
 
   return (
-    <div
-      className="drag-and-drop-box"
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-    >
-      {selectedFile ? (
-        <div>
-          <p>Selected File: {selectedFile.name}</p>
-          {/* Add additional file details or actions */}
-        </div>
-      ) : (
-        <p onClick={handleSelectFile}>Drag and drop a file here, or click to select a file.</p>
-      )}
-      <input
-        type="file"
-        style={{ display: 'none' }}
-        onChange={(e) => handleFileChange(e.target.files[0])}
-        ref={fileInputRef}
-      />
-      <button onClick={handleSelectFile}>Select File</button>
+    <div className="drag-and-drop-container">
+      <div
+        className={`drag-and-drop-box${selectedFile ? ' with-file' : ''}`}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+      >
+        {selectedFile ? (
+          <div>
+            <p>Selected File: {selectedFile.name}</p>
+            {/* Add additional file details or actions */}
+          </div>
+        ) : (
+          <p onClick={handleSelectFile}>Drag and drop a file here, or click to select a file.</p>
+        )}
+        <input
+          type="file"
+          style={{ display: 'none' }}
+          onChange={(e) => handleFileChange(e.target.files[0])}
+          ref={fileInputRef}
+        />
+        <Button variant="contained" className='button-round' onClick={handleSelectFile} >Select File</Button>
+      </div>
     </div>
   );
 };

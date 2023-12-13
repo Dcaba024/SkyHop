@@ -5,6 +5,12 @@ import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import SelectionMenu from './SelectionMenu';
 import SplitSchedule from './SplitSchedule';
 import Location from './Location';
+import Client from './Client';
+import TestingCenter from './TestingCenter';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
+
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) {
     return null;
@@ -22,11 +28,18 @@ const Modal = ({ isOpen, onClose, children }) => {
               <div className='row'>
                   <div className='column'>
                       <SelectionMenu />
+                      <h2>Select a manifest that you'd like to import</h2>
+                          <DragAndDropBox fontSize="large" />
                   </div>
                   <div className='column'>
                     <SplitSchedule/>
                     <div className="line" />
                     <Location/>
+                    <Client/>
+                    <TestingCenter number={1}/>
+                    <TestingCenter number={2}/>
+                    <TestingCenter number={3}/>
+                    <TestingCenter number={4}/>
                   </div>
 
               </div>
@@ -35,13 +48,22 @@ const Modal = ({ isOpen, onClose, children }) => {
                       <div className="line-separator" />
                   </div>
               </div>
-              <div className='row'>
-                    <div className='column'>
-                        <h2>Select a manifest that you'd like to import</h2>
-                          <DragAndDropBox fontSize="large" />
-                    </div>
+              <div className='row submit'>
+                    
+                   <h2>Data in thhe import file is correct. Please press Continue to import</h2>
+                     
+
 
               </div>
+              <div className='row submit'>
+                        
+                    
+                        <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                        <Button variant="contained" className='button-round'  style={{ marginRight: '8px' }}>Continue Import</Button>
+                        <Button variant="outlined" className='button-round'>Cancel</Button>
+                        
+                        </ButtonGroup>
+                                </div>      
           </div>
       </div>
   );

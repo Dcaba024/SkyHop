@@ -1,0 +1,26 @@
+.drag-and-drop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  .drag-and-drop-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  
+    &.with-file {
+      border-color: #4caf50; /* Change border color when a file is selected */
+    }
+  }
+  
+  .drag-and-drop-box p {
+    margin: 0;
+  }
+  
+  /* Add more styles as needed */
+  

@@ -73,3 +73,22 @@
     width: 50%; /* Set the width to match the width of the selection menu */
   }
   
+
+  .submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .button-round {
+    border-radius: 20px; /* Adjust the border radius to make it round */
+    margin-right: 15px;
+    /* Add any other styles you need */
+  }
